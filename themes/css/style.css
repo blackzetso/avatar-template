@@ -4,6 +4,24 @@ body
 body {
     /*background-color: #f8f9fa;*/
 }
+#loading {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed; 
+  background-color: #fff;
+  z-index: 99;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#loading-image {
+  z-index: 999;
+}
 /* 
 Start Navbar
 */
@@ -214,6 +232,7 @@ slick slider
         height: 50px;
         width: 50px;
         border-radius: 5px;
+        display: none !important;
     }
 
     .slick-next {
@@ -223,8 +242,16 @@ slick slider
         height: 50px;
         width: 50px;
         border-radius: 5px;
+        display: none !important;
     }
 
+    .slick-list:hover + .slick-next{
+        display: block !important;
+    }
+
+    .slick-list:hover + .slick-prev{
+        display: block !important;
+    }
     .slick-slide {
       transition: all ease-in-out .3s;
       opacity: 1;
@@ -262,7 +289,7 @@ slick slider
     }
 
     .grading .card-title {
-        bottom: 35px;
+        bottom: 70px;
         position: absolute;
         color: #fff;
         text-align: center !important;
@@ -273,7 +300,7 @@ slick slider
     .post-meta {
         line-height: 12px;
         position: absolute;
-        bottom: 0;
+        bottom: 43px;
         font-size: 13px;
         text-align: center;
         width: 92%;
@@ -288,26 +315,17 @@ slick slider
     Home page section 1
 */
 
-.grading {
+grading {
     position: absolute;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(180deg, rgb(255 255 255 / 0%), #212529);   
 }
-
-.right-side .card {
-    border: unset; 
-    border-radius: 10px; 
+ 
+.section1 .card-group .card .card-body {
+    position: absolute;
+    width: 100%;
 }
-.right-side .card .list-group {
-   border-radius: 10px; 
-}
-.right-side .card .list-group-item{
-    border: unset;
-    background-color: #EDF2F7;
-    
-}
-
 .section1 .post-meta {
     color: #fff !important;
     text-decoration: none;
@@ -336,4 +354,118 @@ slick slider
 .zoom:hover img {
 	-webkit-transform: scale(1.005);
 	transform: scale(1.005);
+}
+ 
+[class^='imghvr-'],
+[class*=' imghvr-'] {
+    background-color: #ffc107;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    max-width: 100%; 
+    color: #fff;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0);
+}
+
+
+element.style {
+}
+.imghvr-push-up figcaption {
+    transform: translateY(100%);
+}
+[class*="imghvr-"] figcaption, [class^=imghvr-] figcaption {
+    background-color: #ffc107;
+}
+
+ 
+@media screen and (min-width: 992px) { 
+    #articlesLeft{
+        padding-right: unset !important;  
+    }
+    #articlesRight{
+        padding-left: unset !important;  
+    }
+}
+
+/* 
+========================================== 
+start home page section 2
+========================================== 
+*/
+.section2 {
+    background-color: #ffc107;   
+}
+
+.section2 .media h5 {
+    text-decoration: none;
+    color: #fff;
+}
+
+.section2 .media h5:hover {
+    text-decoration: none !important;
+    color: #f58b08;
+}
+
+.headding-border {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    background-color: #ffa200;
+    margin-bottom: 30px;
+}
+
+.headding-border::before {
+    position: absolute;
+    bottom: -1px;
+    width: 50px;
+    height: 4px;
+    background-color: inherit;
+    content: ''
+}
+.headding-border::after {
+    position: absolute;
+    bottom: -1px;
+    width: 15px;
+    height: 4px;
+    background-color: inherit;
+    content: '';
+    left: 53px;
+}
+
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.category-headding {
+    margin-top: 0;
+    font-size: 22px;
+    color: #222;
+    text-transform: uppercase;
+    font-family: Lato,sans-serif;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.btn-inline-warning {
+    background-color : #ffc107;
+    color: #fff;
+}
+.btn-inline-warning:hover {
+    background-color: #fff;
+    color: #ffc107 !important;
+    border-color: #ffc107;
+}
+
+.rounded-btn {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
